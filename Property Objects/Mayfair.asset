@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98f6bc92a1f8014989cc3bfc9c1cc94, type: 3}
+  m_Name: Mayfair
+  m_EditorClassIdentifier: 
+  propertyName: Mayfair
+  setColour: 7
+  propertyValue: 400
+  whoOwns: {fileID: 0}
+  costOfBuilding: 200
+  tierPrices: 32000000c80000005802000078050000a4060000
+  costWithHotels: 2000
+  mortgage: 200
+  unmortgage: 220
