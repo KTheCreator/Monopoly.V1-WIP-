@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class checkingPropertyScript : MonoBehaviour
 {
-    public List<PropertyObject> POLists = new List<PropertyObject>();
+    
     [Space]
     [Header("Brown")]
     public string OldKentRoad = null;
@@ -100,33 +100,84 @@ public class checkingPropertyScript : MonoBehaviour
     {
         //Managing properties purchases
         //Will only update who owns it if a change is detected.
-        if(OldKentRoad != OLK.PO.name) OldKentRoad = OLK.PO.name;
-
-        else if(Whitechapel != WC.PO.name) Whitechapel = WC.PO.name;
-
-        else if(Euston != EU.PO.name) Euston = EU.PO.name;
-
-        else if(The_Angel != TA.PO.name) The_Angel = TA.PO.name;
+        if (OldKentRoad != OLK.PO.name) OldKentRoad = OLK.PO.name;
+        else if (Whitechapel != WC.PO.name) Whitechapel = WC.PO.name;
+        else if (Euston != EU.PO.name) Euston = EU.PO.name;
+        else if (The_Angel != TA.PO.name) The_Angel = TA.PO.name;
         else if (Pentonville_Road != PR.PO.name) Pentonville_Road = PR.PO.name;
         else if (PallMall != PM.PO.name) PallMall = PM.PO.name;
         else if (Whitehall != WH.PO.name) Whitehall = WH.PO.name;
-        else if(Northumberland_Road != NR.PO.name) Northumberland_Road = NR.PO.name;
-        else if(BowStreet != BS.PO.name) BowStreet = BS.PO.name;
+        else if (Northumberland_Road != NR.PO.name) Northumberland_Road = NR.PO.name;
+        else if (BowStreet != BS.PO.name) BowStreet = BS.PO.name;
         else if (Marlborough_Street != MS.PO.name) Marlborough_Street = MS.PO.name;
-        else if(Vine_Street != VS.PO.name) Vine_Street = VS.PO.name;
+        else if (Vine_Street != VS.PO.name) Vine_Street = VS.PO.name;
         else if (Fleet_Street != FS.PO.name) Fleet_Street = FS.PO.name;
         else if (Trafalgar != TR.PO.name) Trafalgar = TR.PO.name;
         else if (Strand != ST.PO.name) Strand = ST.PO.name;
-        else if(Piccadilly != PI.PO.name) Piccadilly = PI.PO.name;
-        else if(Coventry != CO.PO.name) Coventry = CO.PO.name;
+        else if (Piccadilly != PI.PO.name) Piccadilly = PI.PO.name;
+        else if (Coventry != CO.PO.name) Coventry = CO.PO.name;
         else if (Leceister != LE.PO.name) Leceister = LE.PO.name;
-        else if(Bond_Street != BOS.PO.name) Bond_Street = BOS.PO.name;
-        else if(Oxford != OX.PO.name) Oxford = OX.PO.name;
-        else if(Regent != RE.PO.name) Regent = RE.PO.name;
-        else if(Mayfair != MA.PO.name)Mayfair = MA.PO.name;
+        else if (Bond_Street != BOS.PO.name) Bond_Street = BOS.PO.name;
+        else if (Oxford != OX.PO.name) Oxford = OX.PO.name;
+        else if (Regent != RE.PO.name) Regent = RE.PO.name;
+        else if (Mayfair != MA.PO.name) Mayfair = MA.PO.name;
         else if (Park_Lane != PL.PO.name) Park_Lane = PL.PO.name;
 
-
+        //Check if a set is owned
+        //Brown Set
+        if(OldKentRoad == Whitechapel)
+        {
+            OLK.PO.setOwned = true;
+            WH.PO.setOwned = true;
+        }
+        //Light Blue
+        else if(Euston == The_Angel && The_Angel == Pentonville_Road)
+        {
+            EU.PO.setOwned = true;
+            TA.PO.setOwned = true;
+            PR.PO.setOwned = true;
+        }
+        //Pink
+        else if (PallMall == Whitechapel && Whitechapel == Northumberland_Road)
+        {
+            PM.PO.setOwned = true;
+            WH.PO.setOwned = true;
+            PR.PO.setOwned = true;
+        }
+        //Orange
+        else if(BowStreet == Marlborough_Street && Marlborough_Street == Vine_Street)
+        {
+            BS.PO.setOwned = true;
+            MS.PO.setOwned = true;
+            VS.PO.setOwned = true;
+        }
+        //Red
+        else if(Fleet_Street == Trafalgar && Trafalgar == Strand)
+        {
+            FS.PO.setOwned = true;
+            TR.PO.setOwned = true;
+            ST.PO.setOwned = true;
+        }
+        //Yellow 
+        else if(Piccadilly == Coventry && Coventry == Leceister)
+        {
+            PI.PO.setOwned = true;
+            CO.PO.setOwned = true;
+            LE.PO.setOwned = true;
+        }
+        //Green
+        else if(Bond_Street == Oxford && Oxford == Regent)
+        {
+            BOS.PO.setOwned = true;
+            OX.PO.setOwned = true;
+            RE.PO.setOwned = true;
+        }
+        //Dark Blue
+        else if(Mayfair == Park_Lane)
+        {
+            MA.PO.setOwned = true;
+            PL.PO.setOwned = true;
+        }
     }
 
 }

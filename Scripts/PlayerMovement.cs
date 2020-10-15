@@ -132,7 +132,14 @@ public class PlayerMovement : MonoBehaviour
                         //If the property is already owned, need to pay the player that owns it
                         else if (currSpot.GetComponent<WalkableScript>().PO.whoOwns != this.gameObject.name)
                         {
-                            playerStats.payOtherPlayer(currSpot.GetComponent<WalkableScript>().PO.whoOwns, currSpot.GetComponent<WalkableScript>().PO.tierPrices[0]);
+                            if (currSpot.GetComponent<WalkableScript>().PO.setOwned)
+                            {
+                                playerStats.payOtherPlayer(currSpot.GetComponent<WalkableScript>().PO.whoOwns, (currSpot.GetComponent<WalkableScript>().PO.tierPrices[0] * 2));
+                            }
+                            else if (!currSpot.GetComponent<WalkableScript>().PO.setOwned)
+                            {
+                                playerStats.payOtherPlayer(currSpot.GetComponent<WalkableScript>().PO.whoOwns, currSpot.GetComponent<WalkableScript>().PO.tierPrices[0]);
+                            }
                         }
                     }
                     
